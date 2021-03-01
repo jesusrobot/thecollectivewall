@@ -245,7 +245,7 @@ textarea:focus, .input-text:focus {
 
 @media screen and (max-width: 550px) {
   .wrapper {
-    max-width: 90%;
+    max-width: 85%;
   }
   .title {
     font-size: 1.95rem;
