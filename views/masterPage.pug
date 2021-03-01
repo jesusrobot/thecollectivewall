@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title The Collective Wall
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap' rel='stylesheet')
+    link(rel="stylesheet", href="/style/app.css")
+  body
+    nav.wrapper.navigation
+      div
+        h1.title  The Collective Wall
+        h2.sub-title Leave your ideas on the wall
+      button#open-form.btn Scratch the wall
+
+    block contentPage
+
+    footer.wrapper.footer
+      p Made with ❤️ by 
+        a(href="#").ghost-btn @jesusrobot_
+    script(src="/dist/bundle.js") 

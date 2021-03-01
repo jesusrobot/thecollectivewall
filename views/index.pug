@@ -1,0 +1,23 @@
+extends masterPage
+
+block contentPage
+  form#form.wrapper(action="/" method="POST")
+    fieldset.field 
+      label Your idea
+      textarea#content
+    fieldset.field
+      label Your signature
+      input#signature.input-text(type="text" autocomplete="off")
+    fieldset.field.send
+      input#send.btn.send-button(type="submit", value="Scratch")
+      .errors#errors
+  .wall.wrapper
+    p.publications-details In the collective wall there are 
+      span#count #{posts.length} 
+      | ideas
+    #publications.publications
+      if posts.length > 0 
+        each post in posts
+          article.publication
+            p.body #{post.postContent}
+            p.author - #{post.postSignature} on #{post.date}

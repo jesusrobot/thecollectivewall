@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #00A5DF;
+  --grey: rgb(173, 171, 171);
+  --grey2: rgb(230, 230, 230);
+  --grey3: #EFF2F5;
+  --grey4: #F8FAFD;
+  --black: #222531;
+  --white: #fff;
+  --red: #EF4E4E;
+  --green: #00A363;
+
+
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--grey4);
+  color: var(--black);
+}
+
+/* ========== GENERAL CLASSES ========== */
+
+.wrapper {
+  max-width: 1050px;
+  margin: 2rem auto;
+}
+
+.btn {
+  padding: 1rem;
+  border: none;
+  font-size: .9rem;
+  color: var(--white);
+  background-color: var(--blue);
+  cursor: pointer;
+}
+
+.ghost-btn {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.visible {
+  display: block;
+}
+
+.error {
+  border-color: var(--red) !important;
+}
+
+.success {
+  border-color:  var(--green) !important;
+}
+
+.alert {
+  text-align: center;
+  position: fixed;
+  bottom: 2rem;
+  padding: 1rem;
+  right: 3rem;
+  color: var(--white);
+  background-color: var(--green);
+  background-color: var(--green);
+}
+
+/* ========== Dark Mode ========== */
+
+
+
+/* ========== Navigation ========== */
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.7rem;
+  letter-spacing: -2px;
+  color: #000;
+}
+
+.sub-title {
+  margin: -8px 0 0;
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -1px;
+  color: var(--grey);
+}
+
+/* ========== FORM ========== */
+
+form {
+  --animate-duration: .5s;
+  display: none;
+  margin-bottom: 4rem !important;
+  padding: 2rem;
+  background-color: var(--white);
+  border: 1px solid var(--grey2);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: none;
+}
+
+.field label {
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+
+.field.send {
+  flex-direction: row;
+}
+
+textarea {
+  min-height: 150px;
+  min-width: auto;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: #666;
+  resize: none;
+  border: 1px solid var(--grey2);
+  background-color: var(--grey3);
+}
+
+.input-text {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #666;
+  border: 1px solid var(--grey2);
+  background-color: var(--grey3);
+}
+
+textarea:focus, .input-text:focus {
+  border: 1px solid var(--blue);
+  outline: 0;
+}
+
+.send-button {
+  width: 20%;
+}
+
+.errors {
+  margin-left: 2rem;
+}
+
+.error-alert {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--red);
+  color: var(--red);
+  background-color: #ef4e4e2a;
+}
+
+/* ========== PUBLICATIONS ========== */
+
+.wall {
+  margin-top: 4rem;
+}
+
+.publications-details {
+  width: 100%;
+  margin: 0 0 1rem;
+  color: var(--grey);
+}
+
+.publications-details span {
+  font-weight: 600;
+  color: var(--green);
+}
+
+.publications {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.publication {
+  width: 32%;
+  margin-bottom: 1rem;
+  padding: 1.2rem;
+  border: 1px solid var(--grey2);
+  background-color: var(--white);
+}
+
+.publication .body {
+  margin: 0 0 .5rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+
+.publication .author {
+  margin: 0;
+  font-style: italic;
+  color: var(--grey);
+  overflow-wrap: break-word;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+@media screen and (max-width: 1370px) {
+  .wrapper {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation > div {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .sub-title {
+    margin-top: -5px;
+    font-size: 1.2rem;
+  }
+
+  .navigation .btn {
+    margin: 0 auto;
+  }
+
+  .publication {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .title {
+    font-size: 1.95rem;
+  }
+
+  .sub-title {
+    margin-top: -5px;
+    font-size: .97rem;
+  }
+
+  .field.send {
+    flex-direction: column;
+  }
+
+  form .btn {
+    width: 100%;
+    margin-bottom: .5rem;
+  }
+
+  .errors {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+    font-size: .9rem;
+  }
+
+  form label {
+    font-size: .9rem;
+  }
+
+  .publication {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .sub-title {
+    margin-top: -5px;
+    font-size: .9rem;
+  }
+}
