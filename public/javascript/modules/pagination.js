@@ -132,5 +132,5 @@ const pagination = (_data) => {
 }
 
 pagination();
-
+f
 export default pagination;
