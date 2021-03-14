@@ -16,8 +16,18 @@ block contentPage
       span#count #{posts.length} 
       | ideas
     #publications.publications
-      if posts.length > 0 
-        each post in posts
-          article.publication
-            p.body #{post.postContent}
-            p.author - #{post.postSignature} on #{post.date}
+      
+    #pagination.pagination
+      div 
+        p.label Posts per page
+        select#numberPosts
+          option( value="8") 8 Posts
+          option( value="12") 12 Posts
+          option( value="16" selected) 16 Posts
+          option( value="20") 20 Posts
+          option( value="24") 24 Posts
+          option( value="all") All Posts
+      div
+        button#previous 👈️
+        span#info
+        button#next 👉️

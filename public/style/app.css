@@ -189,25 +189,94 @@ textarea:focus, .input-text:focus {
 }
 
 .publication {
-  width: 32%;
+  position: relative;
+  width: 24.5%;
   margin-bottom: 1rem;
-  padding: 1.2rem;
+  padding: 1.5rem;
   border: 1px solid var(--grey2);
   background-color: var(--white);
 }
 
+.postControlls {
+  position: absolute;
+  right: 1.2rem;
+  margin: 0;
+  display: none;
+}
+
+.saved {
+  background-color: lemonchiffon;
+}
+
+.publication:hover .postControlls{
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: .4rem .6rem;
+  font-weight: 600;
+  display: block;
+}
+
 .publication .body {
   margin: 0 0 .5rem;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.4;
   overflow-wrap: break-word;
 }
 
 .publication .author {
   margin: 0;
+  font-size: .9rem;
   font-style: italic;
   color: var(--grey);
   overflow-wrap: break-word;
+}
+
+/* ========== PAGINATION ========== */
+
+#pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+#pagination .label {
+  display: inline;
+  margin-right: .5rem;
+  color: var(--grey);
+}
+
+#pagination span{
+  padding: 0 1rem;
+  color: var(--grey);
+}
+
+#pagination button {
+  padding: .6rem;
+  border: 1px solid var(--grey);
+  /* border-radius: 50%; */
+  font-size: 1rem;
+  background: none;
+  cursor: pointer;
+}
+
+#pagination select {
+  padding: .2rem;
+  border: 1px solid var(--grey);
+  color: var(--black);
+  font-size: 1rem;
+  background: none;
+  cursor: pointer;
+}
+
+#pagination select:focus {
+  outline: 0;
+}
+
+#pagination button:focus {
+  outline: 0;
 }
 
 /* ========== MEDIA QUERIES ========== */
@@ -215,6 +284,12 @@ textarea:focus, .input-text:focus {
 @media screen and (max-width: 1370px) {
   .wrapper {
     max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .publication {
+    width: 32%;
   }
 }
 
@@ -240,6 +315,26 @@ textarea:focus, .input-text:focus {
 
   .publication {
     width: 49%;
+  }
+
+  #pagination  {
+    display: flex;
+  }
+
+  #pagination .label {
+    display: none;
+  }
+
+  #pagination span{
+    padding: 0 .5rem;
+  }
+
+  #pagination button {
+    padding: .4rem;
+  }
+  
+  #pagination select {
+    padding: .2rem;
   }
 }
 
@@ -289,5 +384,13 @@ textarea:focus, .input-text:focus {
   .sub-title {
     margin-top: -5px;
     font-size: .9rem;
+  }
+
+  #pagination  {
+    display: flex;
+    justify-content: center;
+  }
+  #pagination > :first-child {
+    margin-bottom: 1rem;
   }
 }

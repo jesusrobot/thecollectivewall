@@ -1,5 +1,6 @@
 import moment from 'moment';
 import axios from 'axios';
+import pagination from '../modules/pagination';
 
 const openFormButton = document.getElementById('open-form');
 const form = document.getElementById('form');
@@ -136,14 +137,9 @@ const update = (post) => {
   // Cerrar el formulario
   openForm();
 
-  // Mostar la nueva publicacion
-  let element = document.createElement('article');
-  element.classList.add('publication');
-  element.innerHTML = `
-    <p class="body">${post.postContent}</p>
-    <p class="author">${post.postSignature} on ${post.date}</p>
-  `;
-  publications.appendChild(element);
+  // mantener el numero de posts por pagina
+  const select = document.querySelector("#numberPosts");
+  select.options[select.selectedIndex]
 
   // Actualizar el contador de publicaciones
   numPosts.innerText = `${Number(numPosts.textContent) + 1} `;
@@ -195,7 +191,12 @@ const sendPublication = e => {
         // Si la respuesta del servidor es satisfactoria ...
         if(response.status === 200) {
           // Actualizar la informacion mostrada en la pagina
-          update(post);
+          update(post);  
+
+          let data = response.data;
+          data.push(post)
+
+          pagination(data)
           
           // Lanzar una alerta indicando que todo a salido correctamente
           showAlert('Your idea has been saved successfully');
